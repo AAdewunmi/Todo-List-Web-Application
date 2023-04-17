@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Yahoo!!!!!!!! From JSP</title>
+<title>Yahoo!!!! From JSP</title>
 </head>
 <body>
-New JSP File
+My First JSP ${name} 
 </body>
 </html>

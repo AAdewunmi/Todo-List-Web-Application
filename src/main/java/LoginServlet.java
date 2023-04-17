@@ -1,7 +1,6 @@
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +16,8 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		String nameString = request.getParameter("name");
+		request.setAttribute("name", nameString);
 		request.getRequestDispatcher("WEB-INF/views/Login.jsp").forward(request, response);
 	}
 
