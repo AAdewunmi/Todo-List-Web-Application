@@ -8,7 +8,9 @@
 </head>
 <body>
 <form action="/login.do" method="post">
-Enter your name <input type="text" name="name"/>
+Enter your name: <input type="text" name="name"/>
+<br>
+Enter your password: <input type="password" name="password"/>
 <br>
 <input type="submit" value="Submit"/>
 </form>
