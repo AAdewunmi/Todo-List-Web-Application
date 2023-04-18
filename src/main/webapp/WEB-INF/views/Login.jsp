@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Yahoo!!!! From JSP</title>
+<title>Login Page</title>
 </head>
 <body>
 <form action="/login.do" method="post">
