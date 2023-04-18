@@ -7,8 +7,10 @@
 <title>Yahoo!!!! From JSP</title>
 </head>
 <body>
-User name: ${name} 
+<form action="/login.do" method="post">
+Enter your name <input type="text" name="name"/>
 <br>
-Password: ${password}
+<input type="submit" value="Submit"/>
+</form>
 </body>
 </html>
