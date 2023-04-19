@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 6886933344657784107L;
+	UserValidationService service = new UserValidationService();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -21,9 +22,20 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-		request.setAttribute("name", request.getParameter("name"));
-		request.setAttribute("password", request.getParameter("password"));
-		request.getRequestDispatcher("WEB-INF/views/Welcome.jsp").forward(request, response);
+		String name = request.getParameter("name");
+		String password = request.getParameter("password");
+		
+		boolean isUserValid = service.isUserValid(name, password);
+		
+		if (isUserValid) {
+			request.setAttribute("name", name);
+			request.setAttribute("password", password);
+			request.getRequestDispatcher("WEB-INF/views/Welcome.jsp").forward(request, response);
+		}else {
+			request.getRequestDispatcher("WEB-INF/views/Login.jsp").forward(request, response);
+		}
+		
+		
 	}
 
 }
