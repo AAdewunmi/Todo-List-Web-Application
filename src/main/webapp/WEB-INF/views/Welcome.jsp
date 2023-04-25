@@ -9,5 +9,10 @@
 <body>
 Welcome ${name} !!!
 <br>
+<br>
+Your Todo's are:
+<br>
+<br>
+<p>${todos}</p>
 </body>
 </html>
