@@ -17,6 +17,6 @@ public class Todo {
 	}
 	
 	public String toString() {
-		return String.format("Todo [name=%s]", nameString);
+		return "Todo [name=" + nameString + "]";
 	}
 }

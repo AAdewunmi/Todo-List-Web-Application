@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome Page</title>
+<title>Todo Page</title>
 </head>
 <body>
-Welcome ${name} !!!
 <br>
 <br>
-Your Todo's are:
+Welcome ${name} !!!, your Todo's are:
 <br>
 <br>
 <p>${todos}</p>

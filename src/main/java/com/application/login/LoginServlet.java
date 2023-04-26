@@ -16,7 +16,6 @@ public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 6886933344657784107L;
 	LoginService userValidationService = new LoginService();
-	TodoService todoService = new TodoService();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -30,10 +29,7 @@ public class LoginServlet extends HttpServlet {
 		boolean isUserValid = userValidationService.isUserValid(name, password);
 		
 		if (isUserValid) {
-			request.setAttribute("name", name);
-			request.setAttribute("password", password);
-			request.setAttribute("todos", todoService.retrieveTodos());
-			request.getRequestDispatcher("WEB-INF/views/Welcome.jsp").forward(request, response);
+			response.sendRedirect("/todo.do");
 		}else {
 			request.setAttribute("errorMessage", "Invalid Credentials!");
 			request.getRequestDispatcher("WEB-INF/views/Login.jsp").forward(request, response);
