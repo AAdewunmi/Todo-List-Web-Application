@@ -10,7 +10,7 @@
 <body>
 <br>
 <br>
-Welcome ${name} !!!, your Todo's are:
+<p> Welcome ${name} !!!, your Todo's are: </p>
 <br>
 <br>
 <ol>
