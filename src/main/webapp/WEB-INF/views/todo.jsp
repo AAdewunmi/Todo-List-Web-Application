@@ -1,6 +1,6 @@
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,15 +8,17 @@
 <title>Todo Page</title>
 </head>
 <body>
-<br>
-<br>
-<p> Welcome ${name} !!!, your Todo's are: </p>
-<br>
-<br>
-<ol>
-	<c:forEach items="${todos}" var="todo">
-		<li>${todo.name}</li>
-	</c:forEach>
-</ol>
+	<br>
+	<p>Welcome ${name} !!!, your Todo's are:</p>
+	<ol>
+		<c:forEach items="${todos}" var="todo">
+			<li>${todo.name}</li>
+		</c:forEach>
+	</ol>
+	<br>
+	<br>
+	<form action="/todo.do" method="post">
+	<input type="text" name="todo"/>   <input type="submit" value="Add"/>
+	</form>
 </body>
 </html>
