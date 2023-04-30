@@ -16,6 +16,24 @@ public class Todo {
 		return nameString;
 	}
 	
+	public boolean equals(Object compared) {
+		if (this == compared) {
+			return true;
+		}
+		
+		if (!(compared instanceof Todo)) {
+			return false;
+		}
+		
+		Todo comparedTodo = (Todo) compared;
+		
+		if (this.nameString.equals(comparedTodo.nameString)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public String toString() {
 		return "Todo [name=" + nameString + "]";
 	}
