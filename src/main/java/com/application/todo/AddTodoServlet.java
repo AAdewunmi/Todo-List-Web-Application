@@ -11,16 +11,10 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class TodoServlet
  */
 
-@WebServlet("/todo.do")
+@WebServlet("/add-todo.do")
 public class AddTodoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private TodoService todoService = new TodoService();
-
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		request.setAttribute("todos", todoService.retrieveTodos());
-		request.getRequestDispatcher("WEB-INF/views/todo.jsp").forward(request, response);
-	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,7 +23,4 @@ public class AddTodoServlet extends HttpServlet {
 		response.sendRedirect("/todo.do");
 	}
 	
-	
-	
-
 }
