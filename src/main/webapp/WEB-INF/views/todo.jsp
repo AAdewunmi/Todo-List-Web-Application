@@ -47,7 +47,7 @@
 		</ol>
 		<br> 
 		
-		<form action="/todo.do" method="post">
+		<form action="/add-todo.do" method="post">
 			Enter new Todo: &nbsp; <input type="text" name="todo" /> &nbsp; <input type="submit"
 				value="Add" />
 		</form>
