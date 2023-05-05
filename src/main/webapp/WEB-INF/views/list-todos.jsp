@@ -25,24 +25,31 @@
 
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
-			<li><a href="/todo.do">Todos</a></li>
+			<li><a href="/list-todos.do">Todos</a></li>
 			<li><a href="http://www.in28minutes.com">In28Minutes</a></li>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/login.do">Login</a></li>
+			<li><a href="/logout.do">Logout</a></li>
 		</ul>
 
 	</nav>
 
 	<div class="container">
-		<form action="/login.do" method="post">
-			<p>
-				<font color="red">${errorMessage}</font>
-			</p>
-			<br> Enter your name: <input type="text" name="name" /> <br>
-			<br> Enter your password: <input type="password" name="password" />
-			<br> <br> <input type="submit" value="Submit" />
+		<br>
+		<H1>Welcome ${name} !!!</H1>
+		<p>Your Todo's are:</p>
+		<ol>
+			<c:forEach items="${todos}" var="todo">
+				<li>${todo.name}&nbsp; &nbsp; <a
+					href="/delete-todo.do?todo=${todo.name}">Delete</a></li>
+			</c:forEach>
+		</ol>
+		<br> 
+		
+		<form action="/add-todo.do" method="post">
+			Enter new Todo: &nbsp; <input type="text" name="todo" /> &nbsp; <input type="submit"
+				value="Add" />
 		</form>
 	</div>
 

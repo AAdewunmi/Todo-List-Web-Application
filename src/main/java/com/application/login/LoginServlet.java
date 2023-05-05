@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.application.todo.TodoService;
-
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 
@@ -19,7 +17,7 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		request.getRequestDispatcher("WEB-INF/views/Login.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
@@ -30,10 +28,10 @@ public class LoginServlet extends HttpServlet {
 		
 		if (isUserValid) {
 			request.getSession().setAttribute("name", name);
-			response.sendRedirect("/todo.do");
+			response.sendRedirect("/list-todos.do");
 		}else {
 			request.setAttribute("errorMessage", "Invalid Credentials!");
-			request.getRequestDispatcher("WEB-INF/views/Login.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
 		}
 		
 		
