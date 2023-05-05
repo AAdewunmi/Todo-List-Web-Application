@@ -36,21 +36,20 @@
 	</nav>
 
 	<div class="container">
-		<br>
 		<H1>Welcome ${name} !!!</H1>
-		<p>Your Todo's are:</p>
+
+		Your Todos are:
 		<ol>
 			<c:forEach items="${todos}" var="todo">
-				<li>${todo.name}&nbsp; &nbsp; <a
+				<li>${todo.name}&nbsp;<a
 					href="/delete-todo.do?todo=${todo.name}">Delete</a></li>
 			</c:forEach>
 		</ol>
-		<br> 
-		
-		<form action="/add-todo.do" method="post">
-			Enter new Todo: &nbsp; <input type="text" name="todo" /> &nbsp; <input type="submit"
-				value="Add" />
-		</form>
+
+		<p>
+			<font color="red">${errorMessage}</font>
+		</p>
+		<a href="/add-todo.do">Add New Todo</a>
 	</div>
 
 	<footer class="footer">
