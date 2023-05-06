@@ -42,7 +42,7 @@
 		<ol>
 			<c:forEach items="${todos}" var="todo">
 				<li>${todo.name}&nbsp;<a
-					href="/delete-todo.do?todo=${todo.name}">Delete</a></li>
+					href="/delete-todo.do?todo=${todo.name}&category=${todo.category}">Delete</a></li>
 			</c:forEach>
 		</ol>
 
