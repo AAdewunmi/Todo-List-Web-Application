@@ -39,8 +39,15 @@
 		<br>
 		<p>Your New Todo's Action Item: </p>
 		<form action="/add-todo.do" method="post">
-			Enter new Todo: &nbsp; <input type="text" name="todo" /> &nbsp; <input type="submit"
-				value="Add" />
+			Description: &nbsp; <input type="text" name="todo" /> 
+			<br>
+			<br>
+			Category: &nbsp; <input type="text" name="todo" /> 
+			<br>
+			<br>
+			<input type="submit" value="Add" />
+			<br>
+			<br>
 		</form>
 	</div>
 
