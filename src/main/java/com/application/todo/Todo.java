@@ -1,11 +1,15 @@
 package com.application.todo;
 
+import java.util.Objects;
+
 public class Todo {
 	
 	private String nameString;
+	private String category;
 	
-	public Todo(String name) {
+	public Todo(String name, String category) {
 		this.nameString = name;
+		this.category = category;
 	}
 	
 	public void setName(String name) {
@@ -16,25 +20,36 @@ public class Todo {
 		return nameString;
 	}
 	
-	public boolean equals(Object compared) {
-		if (this == compared) {
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(category, nameString);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
 			return true;
-		}
-		
-		if (!(compared instanceof Todo)) {
+		if (obj == null)
 			return false;
-		}
-		
-		Todo comparedTodo = (Todo) compared;
-		
-		if (this.nameString.equals(comparedTodo.nameString)) {
-			return true;
-		}
-		
-		return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Todo other = (Todo) obj;
+		return Objects.equals(category, other.category) && Objects.equals(nameString, other.nameString);
+	}
+
+	@Override
+	public String toString() {
+		return "Todo -> Name: " + nameString + " Category: "+ category;
 	}
 	
-	public String toString() {
-		return "Todo [name=" + nameString + "]";
-	}
 }
