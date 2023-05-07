@@ -46,14 +46,6 @@
 		</p>
 		<a class="btn btn-success" href="/add-todo.do">Add New Todo</a>
 	</div>
-
-	<footer class="footer">
-		<p>footer content</p>
-	</footer>
-
-	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-</body>
+<%@ include file="../common/footer.jspf"%>
 
 </html>
