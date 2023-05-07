@@ -3,21 +3,7 @@
 
 <body>
 
-	<nav class="navbar navbar-default">
-
-		<a href="/" class="navbar-brand">Brand</a>
-
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="/list-todos.do">Todos</a></li>
-			<li><a href="http://www.in28minutes.com">In28Minutes</a></li>
-		</ul>
-
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/login.do">Login</a></li>
-		</ul>
-
-	</nav>
+	<%@ include file="../common/navigation.jspf"%>
 
 	<div class="container">
 		<form action="/login.do" method="post">
